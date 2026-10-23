@@ -1,0 +1,738 @@
+[
+  {
+    "name": "empty dsu",
+    "input": {
+      "task": "dsu",
+      "n": 0,
+      "operations": []
+    },
+    "output": {
+      "states": []
+    },
+    "reason": "No vertices and no operations produce no states."
+  },
+  {
+    "name": "repeated and self unions",
+    "input": {
+      "task": "dsu",
+      "n": 5,
+      "operations": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    "output": {
+      "states": [
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    "reason": "The first and repeated/self unions change nothing; the merged four-vertex group leaves vertex 4 isolated."
+  },
+  {
+    "name": "kruskal empty",
+    "input": {
+      "task": "kruskal",
+      "n": 0,
+      "edges": []
+    },
+    "output": {
+      "cost": 0,
+      "components": 0
+    },
+    "reason": "The empty forest has zero cost and components."
+  },
+  {
+    "name": "kruskal isolates",
+    "input": {
+      "task": "kruskal",
+      "n": 4,
+      "edges": []
+    },
+    "output": {
+      "cost": 0,
+      "components": 4
+    },
+    "reason": "Every isolated vertex is one component."
+  },
+  {
+    "name": "kruskal negative parallel loops",
+    "input": {
+      "task": "kruskal",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          0,
+          -100
+        ],
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          -3
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          -8
+        ]
+      ]
+    },
+    "output": {
+      "cost": -1,
+      "components": 3
+    },
+    "reason": "Component {0,1,2} needs the -3 edge and one edge of weight 2; loops are unusable and vertices 3/4 are separate."
+  },
+  {
+    "name": "kruskal 64 bit cost",
+    "input": {
+      "task": "kruskal",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1,
+          1000000000
+        ],
+        [
+          1,
+          2,
+          1000000000
+        ],
+        [
+          2,
+          3,
+          1000000000
+        ],
+        [
+          3,
+          4,
+          1000000000
+        ]
+      ]
+    },
+    "output": {
+      "cost": 4000000000,
+      "components": 1
+    },
+    "reason": "The graph is already a tree with four edges of weight one billion."
+  },
+  {
+    "name": "kruskal tied forest",
+    "input": {
+      "task": "kruskal",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    "output": {
+      "cost": 2,
+      "components": 1
+    },
+    "reason": "Any two distinct edges connecting all three vertices form a minimum tree."
+  },
+  {
+    "name": "prim empty",
+    "input": {
+      "task": "prim",
+      "n": 0,
+      "edges": []
+    },
+    "output": {
+      "cost": 0,
+      "components": 0
+    },
+    "reason": "The empty forest has zero cost and components."
+  },
+  {
+    "name": "prim isolates",
+    "input": {
+      "task": "prim",
+      "n": 4,
+      "edges": []
+    },
+    "output": {
+      "cost": 0,
+      "components": 4
+    },
+    "reason": "Every isolated vertex is one component."
+  },
+  {
+    "name": "prim negative parallel loops",
+    "input": {
+      "task": "prim",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          0,
+          -100
+        ],
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          -3
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          -8
+        ]
+      ]
+    },
+    "output": {
+      "cost": -1,
+      "components": 3
+    },
+    "reason": "Component {0,1,2} needs the -3 edge and one edge of weight 2; loops are unusable and vertices 3/4 are separate."
+  },
+  {
+    "name": "prim 64 bit cost",
+    "input": {
+      "task": "prim",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1,
+          1000000000
+        ],
+        [
+          1,
+          2,
+          1000000000
+        ],
+        [
+          2,
+          3,
+          1000000000
+        ],
+        [
+          3,
+          4,
+          1000000000
+        ]
+      ]
+    },
+    "output": {
+      "cost": 4000000000,
+      "components": 1
+    },
+    "reason": "The graph is already a tree with four edges of weight one billion."
+  },
+  {
+    "name": "prim tied forest",
+    "input": {
+      "task": "prim",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    "output": {
+      "cost": 2,
+      "components": 1
+    },
+    "reason": "Any two distinct edges connecting all three vertices form a minimum tree."
+  },
+  {
+    "name": "empty scc",
+    "input": {
+      "task": "scc",
+      "n": 0,
+      "edges": []
+    },
+    "output": {
+      "component": []
+    },
+    "reason": "There are no components or condensation edges."
+  },
+  {
+    "name": "scc duplicates and isolate",
+    "input": {
+      "task": "scc",
+      "n": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    "output": {
+      "component": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        3
+      ]
+    },
+    "reason": "Mutually reachable pairs are {0,1} and {2,3}; {4} and isolated {5} are singleton SCCs. Condensation is A->B->C."
+  },
+  {
+    "name": "empty topo",
+    "input": {
+      "task": "topo",
+      "n": 0,
+      "edges": []
+    },
+    "output": {
+      "acyclic": true
+    },
+    "reason": "The empty graph is acyclic."
+  },
+  {
+    "name": "topo cross edge and disconnected",
+    "input": {
+      "task": "topo",
+      "n": 6,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": true
+    },
+    "reason": "All edges go from levels {0,1} to {2} to {3}; vertices 4/5 are free."
+  },
+  {
+    "name": "topo outside component cycle",
+    "input": {
+      "task": "topo",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": false
+    },
+    "reason": "Vertices 2 and 3 form a cycle, even though the first component is acyclic."
+  },
+  {
+    "name": "topo self loop",
+    "input": {
+      "task": "topo",
+      "n": 2,
+      "edges": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": false
+    },
+    "reason": "A vertex cannot precede itself."
+  },
+  {
+    "name": "dag single vertex",
+    "input": {
+      "task": "dag",
+      "n": 1,
+      "source": 0,
+      "edges": []
+    },
+    "output": {
+      "acyclic": true,
+      "distance": [
+        0
+      ]
+    },
+    "reason": "Only the source exists."
+  },
+  {
+    "name": "dag negative unreachable",
+    "input": {
+      "task": "dag",
+      "n": 5,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          8
+        ],
+        [
+          1,
+          2,
+          -7
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": true,
+      "distance": [
+        0,
+        3,
+        -4,
+        0,
+        null
+      ]
+    },
+    "reason": "The best route 0->1->2->3 costs 3-7+4=0; vertex 4 is unreachable."
+  },
+  {
+    "name": "dag nonzero source",
+    "input": {
+      "task": "dag",
+      "n": 4,
+      "source": 2,
+      "edges": [
+        [
+          0,
+          1,
+          -9
+        ],
+        [
+          2,
+          3,
+          -1
+        ],
+        [
+          1,
+          3,
+          -20
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": true,
+      "distance": [
+        null,
+        null,
+        0,
+        -1
+      ]
+    },
+    "reason": "Edges from unreachable vertices must never be relaxed, and -1 is a finite distance."
+  },
+  {
+    "name": "dag tied parallel",
+    "input": {
+      "task": "dag",
+      "n": 4,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": true,
+      "distance": [
+        0,
+        2,
+        1,
+        5
+      ]
+    },
+    "reason": "Parallel edges and the route via 2 tie at vertex 1; two routes to 3 cost 5."
+  },
+  {
+    "name": "dag cycle outside source reachability",
+    "input": {
+      "task": "dag",
+      "n": 5,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          -1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": false
+    },
+    "reason": "The disconnected 2->3->2 cycle makes the whole request cyclic."
+  },
+  {
+    "name": "dag self loop",
+    "input": {
+      "task": "dag",
+      "n": 1,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": false
+    },
+    "reason": "A zero-weight self-loop is still a cycle."
+  },
+  {
+    "name": "dag 64 bit distance",
+    "input": {
+      "task": "dag",
+      "n": 5,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          -1000000000
+        ],
+        [
+          1,
+          2,
+          -1000000000
+        ],
+        [
+          2,
+          3,
+          -1000000000
+        ],
+        [
+          3,
+          4,
+          -1000000000
+        ]
+      ]
+    },
+    "output": {
+      "acyclic": true,
+      "distance": [
+        0,
+        -1000000000,
+        -2000000000,
+        -3000000000,
+        -4000000000
+      ]
+    },
+    "reason": "A unique chain accumulates costs below the signed 32-bit minimum."
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "small_cases": 25,
+  "mixed_requests_in_one_process": 51,
+  "mixed_process_seconds": 0.23843590001342818,
+  "route_checks": 4,
+  "alternative_witness_checks": 4,
+  "invalid_witness_checks": 4,
+  "full_limit_cases": 9,
+  "status": "PASS"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "task": "dsu",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.6510125999921001,
+    "status": "PASS",
+    "output_bytes": 3027802,
+    "output_sha256": "4d6605d0a69cb7ced654646bfd3318f0a1df8c3c1403db212e64f403736fd1a0",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "kruskal",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.46510959998704493,
+    "status": "PASS",
+    "output_bytes": 588935,
+    "output_sha256": "d25b2edba544c9fc180b725fbee8380becc14fad121646a2e0b1b8f4842dff3a",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "prim",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.7318819999927655,
+    "status": "PASS",
+    "output_bytes": 588935,
+    "output_sha256": "d25b2edba544c9fc180b725fbee8380becc14fad121646a2e0b1b8f4842dff3a",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "scc",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.6288397000171244,
+    "status": "PASS",
+    "output_bytes": 1966692,
+    "output_sha256": "31239b13fa24329081b488d9d1d49bfea2703ebb99cedf67a0b281f5079f7f44",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "topo",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.4228889999794774,
+    "status": "PASS",
+    "output_bytes": 588916,
+    "output_sha256": "a040183d2dc8d3cce0978d78c536b572dadd70d3e43050f15739ecc8ceb6bc16",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "dag",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.5384205000009388,
+    "status": "PASS",
+    "output_bytes": 2177812,
+    "output_sha256": "4d9a4f65b9b7a9aafc53aa867341605e184f7fbe93e3326cb7e54ab2040fd75a",
+    "expected_reason": "A repeated directed/undirected chain has a unique forest, singleton SCCs, a forward order and chain distances; DSU merges vertices in order."
+  },
+  {
+    "task": "scc deep cycle",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.4843438000534661,
+    "status": "PASS",
+    "output_bytes": 200033,
+    "output_sha256": "808f55f2c7ba26622a25f21076a6425a6220e35591260e013040ff8e5a01faa6",
+    "expected_reason": "A closing edge turns the full chain into one directed cycle: one SCC, no topological order and no DAG answer."
+  },
+  {
+    "task": "topo deep cycle",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.3657887000008486,
+    "status": "PASS",
+    "output_bytes": 28,
+    "output_sha256": "361fd799a3e653fe60f4b51d8037c12c2c33baed8f8781a8c006e0536d710e47",
+    "expected_reason": "A closing edge turns the full chain into one directed cycle: one SCC, no topological order and no DAG answer."
+  },
+  {
+    "task": "dag deep cycle",
+    "n": 100000,
+    "m_or_q": 250000,
+    "seconds_including_process_and_json": 0.4367760000168346,
+    "status": "PASS",
+    "output_bytes": 48,
+    "output_sha256": "dda6c1a304a98c8f86f6c7b572ff7bd128d412fc241737f6e6b4069b82a33ac7",
+    "expected_reason": "A closing edge turns the full chain into one directed cycle: one SCC, no topological order and no DAG answer."
+  }
+]

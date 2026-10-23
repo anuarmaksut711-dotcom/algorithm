@@ -1,0 +1,81 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "timer": "time.perf_counter",
+  "warmup_calls_per_method_per_size": 1,
+  "repetitions": 5,
+  "boundary": "Only the algorithm call is timed, including internal adjacency/DSU/heap construction and result construction. Graph generation, request construction, JSON parsing, process start, printing, validation, and compilation are excluded for both algorithms.",
+  "rows": [
+    {
+      "n": 1000,
+      "m": 5000,
+      "seed": 20262021,
+      "known_optimum": 999,
+      "components": 1,
+      "kruskal_seconds": [
+        0.004231999977491796,
+        0.0031694999779574573,
+        0.002952700015157461,
+        0.0030642999918200076,
+        0.0028836000128649175
+      ],
+      "prim_seconds": [
+        0.007374699984211475,
+        0.008092199976090342,
+        0.007528499991167337,
+        0.012487999978475273,
+        0.011415300017688423
+      ],
+      "kruskal_median_seconds": 0.0030642999918200076,
+      "prim_median_seconds": 0.008092199976090342
+    },
+    {
+      "n": 10000,
+      "m": 50000,
+      "seed": 20271021,
+      "known_optimum": 9999,
+      "components": 1,
+      "kruskal_seconds": [
+        0.06682770000770688,
+        0.05385739996563643,
+        0.058741599961649626,
+        0.062127600016538054,
+        0.03696599998511374
+      ],
+      "prim_seconds": [
+        0.16821540001546964,
+        0.1595009000157006,
+        0.18876469996757805,
+        0.10791670001344755,
+        0.09755549998953938
+      ],
+      "kruskal_median_seconds": 0.058741599961649626,
+      "prim_median_seconds": 0.1595009000157006
+    },
+    {
+      "n": 50000,
+      "m": 250000,
+      "seed": 20311021,
+      "known_optimum": 49999,
+      "components": 1,
+      "kruskal_seconds": [
+        0.35561730002518743,
+        0.3594427999923937,
+        0.3532619000179693,
+        0.3613815999706276,
+        0.3781073999707587
+      ],
+      "prim_seconds": [
+        0.9851563000120223,
+        0.9445233999867924,
+        1.1986983999959193,
+        1.0120911999838427,
+        0.9597783000208437
+      ],
+      "kruskal_median_seconds": 0.3594427999923937,
+      "prim_median_seconds": 0.9851563000120223
+    }
+  ]
+}

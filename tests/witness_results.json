@@ -1,0 +1,176 @@
+[
+  {
+    "input": {
+      "task": "kruskal",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "cost": 2,
+      "components": 1
+    },
+    "alternative_accepted": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        0,
+        2
+      ]
+    },
+    "invalid_rejected": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "input": {
+      "task": "scc",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "component": [
+        0,
+        0,
+        1
+      ]
+    },
+    "alternative_accepted": {
+      "component": [
+        8,
+        8,
+        20
+      ],
+      "condensation": [
+        [
+          8,
+          20
+        ]
+      ]
+    },
+    "invalid_rejected": {
+      "component": [
+        8,
+        8,
+        20
+      ],
+      "condensation": []
+    }
+  },
+  {
+    "input": {
+      "task": "topo",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "acyclic": true
+    },
+    "alternative_accepted": {
+      "acyclic": true,
+      "order": [
+        1,
+        0,
+        2
+      ]
+    },
+    "invalid_rejected": {
+      "acyclic": true,
+      "order": [
+        0,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "input": {
+      "task": "dag",
+      "n": 2,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "acyclic": true,
+      "distance": [
+        0,
+        2
+      ]
+    },
+    "alternative_accepted": {
+      "acyclic": true,
+      "distance": [
+        0,
+        2
+      ],
+      "parent_edge": [
+        -1,
+        1
+      ]
+    },
+    "invalid_rejected": {
+      "acyclic": true,
+      "distance": [
+        0,
+        2
+      ],
+      "parent_edge": [
+        -1,
+        -1
+      ]
+    }
+  }
+]
